@@ -1,25 +1,28 @@
 import java.util.Scanner;
 
-public class Q06 {
+public class Q06{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite o primeiro número:");
-        int n1 = 0, n2 = 0, n3 = 0, menor = 0;
-        n1 = scanner.nextInt();
-        System.out.println("Digite o segundo número:");
-        n2 = scanner.nextInt();
-        System.out.println("Digite o terceiro número:");
-        n3 = scanner.nextInt();
+        System.out.println("Digite um intervalo em minutos:");
+        int intervalo = 0;
+        intervalo = scanner.nextInt();
+        if(intervalo <= 60){
+            System.out.println(intervalo + " minutos = 0 dias, 0 horas e " + intervalo + " minutos");
+        }
+        else if((intervalo > 60) && (intervalo < 1440)){
+            int horas = 0, minutos = 0;
+            horas = intervalo/60;
+            minutos = intervalo%60;
+            System.out.println(intervalo + " minutos = 0 dias, " + horas + " horas e " + minutos + " minutos");
+
+        }
+        else if(intervalo >= 1440){
+            int dias = 0, horas = 0, minutos = 0;
+            dias = intervalo/1440;
+            horas = (intervalo%1440)/60;
+            minutos = (intervalo%1440)%60;
+            System.out.println(intervalo + " minutos = " + dias + " dias, " + horas + " horas e " + minutos + " minutos");
+        }
         scanner.close();
-        if (n1 > menor){
-            menor = n1;
-        }
-        if (n2 > menor){
-            menor = n2;
-        }
-        if (n3 > menor){
-            menor = n3;
-        }
-        System.out.println("O maior número digitado foi " + menor + ".");
     }
 }

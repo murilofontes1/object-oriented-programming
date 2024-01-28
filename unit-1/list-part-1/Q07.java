@@ -2,34 +2,24 @@ import java.util.Scanner;
 
 public class Q07 {
     public static void main(String[] args){
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Digite o código do setor:");
-    int setor = 0;
-    setor = scanner.nextInt();
-    if((setor != 111) && (setor != 222)){
-        System.out.println("Setor inválido.");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o primeiro número:");
+        int n1 = 0, n2 = 0, n3 = 0, menor = 0;
+        n1 = scanner.nextInt();
+        System.out.println("Digite o segundo número:");
+        n2 = scanner.nextInt();
+        System.out.println("Digite o terceiro número:");
+        n3 = scanner.nextInt();
         scanner.close();
-    }
-    else if((setor == 111) || (setor == 222)){
-        System.out.println("Digite o valor original do produto:");
-        float preco = 0;
-        preco = scanner.nextFloat();
-        scanner.close();
-            if((setor == 222) && (preco > 500)){
-                System.out.println("Setor: Eletros (Cód. " + setor + ") | Preço com desconto (10%): " + (preco * 0.9));
-            }
-            else if(setor == 222){
-                    System.out.println("Setor: Eletros (Cód. " + setor + " | Preço: " + preco);
-            }
-            else if((setor == 111) && (preco > 100)){
-                System.out.println("Setor: Cama, mesa e banho (Cód. " + setor + ") | Preço com desconto (40%): " + (preco * 0.6));
-            }
-            else if((setor == 111) && ((preco >= 50) && (preco <= 100))){
-                System.out.println("Setor: Cama, mesa e banho (Cód. " + setor + ") | Preço com desconto (20%): " + (preco * 0.8));
-            }
-            else{
-                System.out.println("Setor: Cama, mesa e banho (Cód. " + setor + ") | Preço com desconto (10%): " + (preco * 0.9));
-            }
+        if (n1 > menor){
+            menor = n1;
         }
+        if (n2 > menor){
+            menor = n2;
+        }
+        if (n3 > menor){
+            menor = n3;
+        }
+        System.out.println("O maior número digitado foi " + menor + ".");
     }
 }
